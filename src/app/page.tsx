@@ -1,6 +1,6 @@
  
 
-import Navbar from "./Components/Navbar";
+
 import Hero from "./Components/Landingpage/Hero";
 import GalleryImages from "./Components/Landingpage/GalleryImages";
 import Cards from "./Components/Landingpage/Cards"; 
@@ -14,8 +14,7 @@ import Account from "./Components/Account";
 import Blogdata from "./Components/Blogpage/Blogdata"
 import Checkout from "./Components/Checkout";
 import Productinfo from "./Components/Singleproduct/Productinfo"
-import Shoppage from "./Components/shop/Shoppage" ;
-import Footer from "./Components/Footer";
+import Shoppage from "./Components/shop/Shoppage" 
 
 
 
