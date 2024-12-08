@@ -22,7 +22,7 @@ import Shoppage from "./Components/shop/Shoppage"
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      
       <Hero />
       <GalleryImages />
       <Cards />
@@ -30,7 +30,7 @@ export default function Home() {
       <Blog />
       <Instra />
       <Contact />
-      <Footer/>
+   
 
       <Productinfo />
       <Account />
