@@ -11,12 +11,18 @@ import Instra from "./Components/Landingpage/Instra" ;
 import ProductDetails from "./Components/Singleproduct/ProductDetails";
 import Account from "./Components/Account/Account";
 import Blogdata from "./Components/Blogpage/Blogdata"
+<<<<<<< HEAD
 import Checkout from "./Components/checkout/Checkout";
 
 import Shoppage from "./Components/shop/Shoppage" ;
 import Cart from "./Components/Cart"
 
 
+=======
+import Checkout from "./Components/Checkout";
+import Productinfo from "./Components/Singleproduct/Productinfo"
+import Shoppage from "./Components/shop/Shoppage" 
+>>>>>>> 0fa4c7330f127b9df474fb655d8994c311392521
 
 
 
@@ -24,15 +30,24 @@ import Cart from "./Components/Cart"
 export default function Home() {
   return (
     <div>
+<<<<<<< HEAD
       <Cart />
+=======
+      
+>>>>>>> 0fa4c7330f127b9df474fb655d8994c311392521
       <Hero />
       <GalleryImages />
       <Cards />
       <Product />
       <Blog />
       <Instra />
+<<<<<<< HEAD
       
       
+=======
+      <Contact />
+   
+>>>>>>> 0fa4c7330f127b9df474fb655d8994c311392521
 
     
       <Account />
