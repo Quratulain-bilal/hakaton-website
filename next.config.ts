@@ -1,13 +1,10 @@
-import { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+// next.config.js
+module.exports = {
   reactStrictMode: true,
-  // Agar aapko base path set karna ho toh yeh use kar sakte hain
+  // Uncomment the following line if you're using a base path
   // basePath: '/my-app',
-  // images configuration agar aap external images use karte ho toh
+
   images: {
-    domains: ["your-image-domain.com"],
+    domains: ["your-image-domain.com"], // Add your external image domains here
   },
 };
-
-export default nextConfig;

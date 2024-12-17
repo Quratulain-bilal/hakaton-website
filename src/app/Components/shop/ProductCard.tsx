@@ -64,7 +64,58 @@ const ProductGrid: React.FC = () => {
       imageUrl:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/6365b7a95839e4cacacd9fca9af9d99dbf61bc73cf4c7a3c9ab4415a8dddf06d?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
     },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/5a077f92fd46575a030faeed1a15e49321589598aaa57f7b9d014c3e0e8de828?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Trenton modular sofa_3",
+      price: "Rs. 25,000.00",
+    },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/43f827a16b96cc493c71f16a8bed4d9b4e559c569296a38f33bb59d52de4f4f0?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Granite dining table with dining chair",
+      price: "Rs. 25,000.00",
+    },
+
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/d40f9f3837e4cbe6187af96acb7a8a19e8e73bf19438dd45c83cd558c2ef23be?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Grain coffee table",
+      price: "Rs. 25,000.00",
+    },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/bd8bf0d69e64700029329c65fcf004d8afe9efa67fd01bf419300017d449c7f4?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Kent coffee table",
+      price: "Rs. 25,000.00",
+    },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/284934b400d7180c1a176a87de2d90580d058f8db5f6bd81b8ee689a597a9005?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Round coffee table_color 2",
+      price: "Rs. 25,000.00",
+    },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/6fd3b976f6ac21a28635d21a832c15f1a73ce743937abb833fb9c20b96c9ca8c?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Reclaimed teak coffee table",
+      price: "Rs. 25,000.00",
+    },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/0daa4f02e085c7e050b601337521698dafe24a3690868f748f74a979daac7c1d?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Outdoor bar table and stool",
+      price: "Rs. 25,000.00",
+    },
+    {
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/98ba6cbfeda5cc022b59ca90b6963265f350d88d9b5c0875da2c405d6d7e843c?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d",
+      title: "Plain console with teak mirror",
+      price:"Rs. 25,000.00",
+    },
   ];
+
+  
 
   // Pagination component
   const PaginationItem: React.FC<PaginationItemProps> = ({

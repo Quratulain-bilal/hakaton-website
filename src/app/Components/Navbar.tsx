@@ -1,130 +1,106 @@
 "use client";
-import * as React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { FaRegHeart, FaRegUser } from "react-icons/fa";
+import { IoCartOutline, IoSearch } from "react-icons/io5";
+import { HiOutlineMenuAlt3 } from "react-icons/hi"; // Hamburger Icon
+import { AiOutlineClose } from "react-icons/ai"; // Close Icon
 
-// Navigation Item Component
-interface NavigationItemProps {
-  label: string;
-  href: string;
-}
+const Header: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ label, href }) => {
-  const [isActive, setIsActive] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleRouteChange = () => {
-      setIsActive(window.location.pathname === href);
-    };
-
-    // Initialize state and listen for route changes
-    handleRouteChange();
-    window.addEventListener("popstate", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-    };
-  }, [href]);
-
-  return (
-    <div
-      className={`text-base font-semibold text-black whitespace-nowrap ${
-        isActive ? "text-blue-500" : ""
-      }`}
-    >
-      <Link href={href} aria-label={`Go to ${label}`}>
-        {label}
-      </Link>
-    </div>
-  );
-};
-
-// Navigation Component
-const Navigation: React.FC = () => {
-  const links = [
+  const navigationItems = [
     { label: "Home", href: "/" },
-    { label: "Shop", href: "#shop11" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-    { label: "Blog", href:"#blog" },
+    { label: "Shop", href: "/shop" },
+    { label: "About", href: "/about" },
+    { label: "Blogs", href: "/Blogpage" },
+  ];
+
+  const actionIcons = [
+    { icon: IoCartOutline, href: "/Cart", label: "Cart" },
+    { icon: FaRegHeart, href: "#", label: "Wishlist" },
+    { icon: FaRegUser, href: "#", label: "#account" },
+    { icon: IoSearch, href: "#", label: "Search" },
   ];
 
   return (
-    <div className="flex gap-8 justify-end items-center max-md:flex-col max-md:gap-4 max-md:w-full font-bold">
-      {links.map((link) => (
-        <NavigationItem key={link.href} label={link.label} href={link.href} />
-      ))}
-    </div>
-  );
-};
-
-// Logo Component
-const Logo: React.FC = () => {
-  return (
-    <img
-      loading="lazy"
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/19d55a8a2d2ab044309fce0744c06d182736e72df26f9c4f122c50fce0a98437?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-      alt="Company Logo"
-      className="object-contain grow shrink-0 max-w-full aspect-[8.85] w-[247px] max-md:mt-10"
-    />
-  );
-};
-
-// Header Component (Main Navbar)
-export const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  return (
-    <div className="px-20 py-9 w-full bg-amber-100 max-md:px-5 max-md:max-w-full">
-      {/* Header Content */}
-      <div className="flex justify-end items-center gap-8 max-md:flex-col">
-        {/* Navigation Section */}
-        <div className="w-full flex justify-end max-md:w-full">
-          <Navigation />
-        </div>
-
-        {/* Logo Section */}
-        <div className="flex flex-col ml-5 w-[36%] max-md:w-full max-md:mt-5">
-          <Logo />
-        </div>
-      </div>
-
-      {/* Icons Section */}
-      <div className="flex justify-end gap-6 mt-5 w-full max-md:flex-row max-md:justify-center max-md:gap-4">
-        <Link href="/profile" aria-label="Go to Profile">
-          <i className="fas fa-user text-xl cursor-pointer"></i>
-        </Link>
-        <Link href="#cart11" aria-label="View Cart">
-          <i className="fas fa-shopping-cart text-xl cursor-pointer"></i>
-        </Link>
-      </div>
-
-      {/* Toggle button for small screens */}
-      <div className="block md:hidden mt-5">
+    <header className="relative w-full bg-amber-100 px-6 py-6 md:px-16 z-50">
+      <div className="flex items-center justify-between md:justify-end">
+        {/* Hamburger Menu for Small Screens */}
         <button
-          onClick={toggleMenu}
-          className="text-lg font-semibold text-black"
+          className="text-3xl md:hidden text-black"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
         >
-          {isMenuOpen ? "Close Menu" : "Open Menu"}
+          {menuOpen ? <AiOutlineClose /> : <HiOutlineMenuAlt3 />}
         </button>
-      </div>
 
-      {/* Menu Links for Small Screens */}
-      {isMenuOpen && (
-        <div className="max-md:flex max-md:flex-col mt-5">
-          {["Home", "Shop", "About", "Contact", "Blog"].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`} passHref>
-              <div className="text-base font-medium text-black my-2">
-                {item}
-              </div>
+        {/* Icons for Small Screens */}
+        <div className="flex md:hidden items-center gap-6 text-black">
+          {actionIcons.map(({ icon: Icon, href, label }) => (
+            <Link
+              key={label}
+              href={href}
+              className="text-2xl hover:text-blue-600 transition-colors duration-300"
+              aria-label={label}
+            >
+              <Icon />
             </Link>
           ))}
         </div>
+
+        {/* Navigation Links and Icons for Medium and Large Screens */}
+        <div className="hidden md:flex items-center gap-44">
+          {/* Navigation Links */}
+          <nav className="flex text-lg font-semibold text-black gap-8">
+            {navigationItems.map(({ label, href }) => (
+              <Link key={label} href={href} legacyBehavior>
+                <a
+                  target="_blank" // Open all links in a new tab
+                  rel="noopener noreferrer" // Ensure security
+                  className="hover:text-blue-600 transition-colors duration-300"
+                >
+                  {label}
+                </a>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Action Icons */}
+          <div className="flex items-center gap-16 text-black">
+            {actionIcons.map(({ icon: Icon, href, label }) => (
+              <Link
+                key={label}
+                href={href}
+                className="text-2xl hover:text-blue-600 transition-colors duration-300"
+                aria-label={label}
+              >
+                <Icon />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Dropdown Menu for Small Screens */}
+      {menuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-md p-4 md:hidden">
+          {/* Navigation Links */}
+          <nav className="flex flex-col text-lg font-semibold text-black gap-4">
+            {navigationItems.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                className="hover:text-blue-600 transition-colors duration-300"
+                onClick={() => setMenuOpen(false)} // Close menu on link click
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       )}
-    </div>
+    </header>
   );
 };
 

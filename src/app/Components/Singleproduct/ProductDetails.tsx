@@ -1,5 +1,9 @@
 "use client"
 import React, { useState } from "react";
+import Productinfo from "./Productinfo";
+import Head from "./Head";
+import ServiceCard from "./ServiceCard";
+
 
 const ProductDetails: React.FC = () => {
   const productData = {
@@ -20,6 +24,9 @@ const ProductDetails: React.FC = () => {
       { color: "bg-orange-300", isSelected: false },
     ],
   };
+
+
+  
 
   const relatedProducts = [
     {
@@ -54,7 +61,8 @@ const ProductDetails: React.FC = () => {
   const decrement = () => setQuantity((prev) => Math.max(1, prev - 1));
 
   return (
-    <div className="container mx-auto p-6 space-y-16">
+
+    <> <div id="detail">   <Head /><div className="container mx-auto p-6 space-y-16">
       {/* Main Product Section */}
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section: Image */}
@@ -62,8 +70,7 @@ const ProductDetails: React.FC = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/219fef56aee837c5804022740f4acce9430e35e81f9e83bbbb7ec919233c0777"
             alt="Asgaard Sofa"
-            className="w-full rounded-lg object-cover"
-          />
+            className="w-full rounded-lg object-cover" />
         </div>
 
         {/* Right Section: Details */}
@@ -79,11 +86,9 @@ const ProductDetails: React.FC = () => {
               {productData.sizes.map((size, index) => (
                 <div
                   key={index}
-                  className={`px-4 py-2 border rounded-lg ${
-                    size.isSelected
-                      ? "bg-amber-100 border-amber-500"
-                      : "bg-gray-100 border-gray-300"
-                  }`}
+                  className={`px-4 py-2 border rounded-lg ${size.isSelected
+                    ? "bg-amber-100 border-amber-500"
+                    : "bg-gray-100 border-gray-300"}`}
                 >
                   {size.label}
                 </div>
@@ -98,10 +103,7 @@ const ProductDetails: React.FC = () => {
               {productData.colors.map((color, index) => (
                 <div
                   key={index}
-                  className={`w-8 h-8 rounded-full border ${
-                    color.isSelected ? "border-black" : "border-gray-300"
-                  } ${color.color}`}
-                />
+                  className={`w-8 h-8 rounded-full border ${color.isSelected ? "border-black" : "border-gray-300"} ${color.color}`} />
               ))}
             </div>
           </div>
@@ -129,6 +131,7 @@ const ProductDetails: React.FC = () => {
           </button>
         </div>
       </div>
+      <Productinfo />
 
       {/* Related Products Section */}
       <section>
@@ -144,8 +147,7 @@ const ProductDetails: React.FC = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover"
-              />
+                className="w-full h-48 object-cover" />
               <div className="p-4">
                 <h3 className="text-lg font-medium text-gray-800">
                   {product.name}
@@ -157,7 +159,10 @@ const ProductDetails: React.FC = () => {
         </div>
       </section>
     </div>
+    <ServiceCard/>
+    </div>
+    </>
   );
-};
 
+}
 export default ProductDetails;

@@ -29,61 +29,13 @@ const InputField = ({
   );
 };
 
-// Navigation Component
-const Navigation = () => {
-  const NavigationLink = ({
-    label,
-    isActive,
-  }: {
-    label: string;
-    isActive?: boolean;
-  }) => (
-    <div className={`${isActive ? "font-medium" : "font-light"}`}>{label}</div>
-  );
-
-  const NavigationIcon = ({ src, alt }: { src: string; alt: string }) => (
-    <img
-      loading="lazy"
-      src={src}
-      alt={alt}
-      className="object-contain shrink-0 my-auto w-5 aspect-square"
-    />
-  );
-
-  return (
-    <div className="flex relative z-10 flex-col justify-center items-center px-20 py-20 w-full text-base text-black whitespace-nowrap min-h-[328px] max-md:px-5 max-md:pb-24">
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/994d2cee0a74a300e7e875a7aa49c05fe08e475e64b98c8cab43e2bf378568d3?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-        alt=""
-        className="object-cover absolute inset-0 size-full"
-      />
-      <div className="flex relative flex-col mb-0 max-w-full w-[115px] max-md:mb-2.5">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ad7e9b8d0c3b729601df28f20044341e4696757b3f73851774de93c17033938?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-          alt="Logo"
-          className="object-contain w-full aspect-[0.8] max-md:mr-0.5"
-        />
-        <div className="flex gap-1.5">
-          <NavigationLink label="Home" isActive={true} />
-          <NavigationIcon
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/db13939cabd153a09de09c25864d1f622bda5d116dbe6552d6605aca283c27a4?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-            alt="Arrow"
-          />
-          <NavigationLink label="My Account" />
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // Main Account Component
 const Account = () => {
   return (
     <div className="font-sans bg-white text-black">
-      {/* Replace Hero Section with Navigation */}
-      <Navigation />
+  
+      
 
       {/* Login and Register Section */}
       <div className="px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">

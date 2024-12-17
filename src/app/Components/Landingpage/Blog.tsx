@@ -1,8 +1,7 @@
-  
-  "use client"
-  
-  
-  import * as React from "react";
+"use client";
+
+import * as React from "react";
+import Link from "next/link"; // Import Link for navigation
 
 const blogData = [
   {
@@ -112,44 +111,45 @@ const BlogCard: React.FC<BlogCardProps> = ({
 };
 
 export const Blog: React.FC = () => {
-  return ( <div id="blog">
-    <div className="flex flex-col items-center px-20 py-14 w-full bg-white max-md:px-5 max-md:max-w-full">
-      <h1 className="text-4xl font-medium text-black">Our Blogs</h1>
-      <div className="mt-3.5 text-base font-medium text-neutral-400 max-md:max-w-full">
-        Find a bright ideal to suit your taste with our great selection
-      </div>
-      <div className="mt-16 w-full max-w-[1221px] max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <BlogCard {...blogData[0]} />
-          </div>
-          <div className="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col w-full max-md:mt-6 max-md:max-w-full">
-              <div className="max-md:max-w-full">
-                <div className="flex gap-5 max-md:flex-col">
-                  <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-                    <BlogCard {...blogData[1]} />
-                  </div>
-                  <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-                    <BlogCard {...blogData[2]} />
+  return (
+    <div id="blog">
+      <div className="flex flex-col items-center px-20 py-14 w-full bg-white max-md:px-5 max-md:max-w-full">
+        <h1 className="text-4xl font-medium text-black">Our Blogs</h1>
+        <div className="mt-3.5 text-base font-medium text-neutral-400 max-md:max-w-full">
+          Find a bright idea to suit your taste with our great selection
+        </div>
+        <div className="mt-16 w-full max-w-[1221px] max-md:mt-10 max-md:max-w-full">
+          <div className="flex gap-5 max-md:flex-col">
+            <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+              <BlogCard {...blogData[0]} />
+            </div>
+            <div className="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
+              <div className="flex flex-col w-full max-md:mt-6 max-md:max-w-full">
+                <div className="max-md:max-w-full">
+                  <div className="flex gap-5 max-md:flex-col">
+                    <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                      <BlogCard {...blogData[1]} />
+                    </div>
+                    <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                      <BlogCard {...blogData[2]} />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-col mt-20 ml-32 max-w-full text-xl font-medium text-black w-[126px] max-md:mt-10 max-md:ml-2.5">
-                <button
-                  className="text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
-                  tabIndex={0}
-                >
-                  View All Posts
-                </button>
-                <div className="shrink-0 mt-4 w-full h-0.5 border-2 border-black border-solid max-md:mr-1.5" />
+                <div className="flex flex-col mt-20 ml-32 max-w-full text-xl font-medium text-black w-[126px] max-md:mt-10 max-md:ml-2.5">
+                  <Link href="/Blogpage">
+                    <button className="text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                      View All Posts
+                    </button>
+                  </Link>
+                  <div className="shrink-0 mt-4 w-full h-0.5 border-2 border-black border-solid max-md:mr-1.5" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
   );
 };
-export default Blog
+
+export default Blog;

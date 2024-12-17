@@ -1,56 +1,7 @@
 import React from "react";
 import DeliveryFeatures from "./Delievery";
+import Blogimage from "./Blogimage";
 
-// Navigation Component
-const Navigation = () => {
-  const NavigationLink = ({
-    label,
-    isActive,
-  }: {
-    label: string;
-    isActive?: boolean;
-  }) => (
-    <div className={`${isActive ? "font-medium" : "font-light"}`}>{label}</div>
-  );
-
-  const NavigationIcon = ({ src, alt }: { src: string; alt: string }) => (
-    <img
-      loading="lazy"
-      src={src}
-      alt={alt}
-      className="object-contain shrink-0 my-auto w-5 aspect-square"
-    />
-  );
-
-  return (
-    <div className="flex relative z-10 flex-col justify-center items-center px-20 py-20 -mt-1.5 w-full text-base text-black whitespace-nowrap min-h-[328px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/994d2cee0a74a300e7e875a7aa49c05fe08e475e64b98c8cab43e2bf378568d3?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-        alt="Background Image"
-        className="object-cover absolute inset-0 size-full"
-      />
-      <div className="flex relative flex-col mb-0 max-w-full w-[115px] max-md:mb-2.5">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ad7e9b8d0c3b729601df28f20044341e4696757b3f73851774de93c17033938?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-          alt="Logo"
-          className="object-contain w-full aspect-[0.8] max-md:mr-0.5"
-        />
-        <div className="flex gap-1.5">
-          <NavigationLink label="Home" isActive={true} />
-          {/* Replace Cart with My Account */}
-          <NavigationIcon
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/db13939cabd153a09de09c25864d1f622bda5d116dbe6552d6605aca283c27a4?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-            alt="My Account Icon"
-          />
-          {/* Replace Cart with Blog */}
-          <NavigationLink label="Blog" />
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // BlogComponent
 const BlogComponent: React.FC = () => {
@@ -117,8 +68,8 @@ const BlogComponent: React.FC = () => {
   ];
 
   return (
-    <>
-      <Navigation />
+    <> 
+      <Blogimage/>
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row gap-10 px-9 mt-11 w-full max-md:px-5 max-md:mt-10">
         {/* Left Column: Blog Posts */}
@@ -211,6 +162,7 @@ const BlogComponent: React.FC = () => {
 
       {/* Delivery Features */}
       <DeliveryFeatures />
+      
     </>
   );
 };

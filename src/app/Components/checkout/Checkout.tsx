@@ -1,4 +1,5 @@
 import * as React from "react";
+import Checkoutimage from "./Checkoutimage"
 
 // InputField Component
 const InputField: React.FC<{
@@ -54,27 +55,25 @@ const Navigation: React.FC = () => {
   );
 
   return (
-    <div className="flex relative z-10 flex-col justify-center items-center px-20 py-20 -mt-1.5 w-full text-base text-black whitespace-nowrap min-h-[328px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
+    <><Checkoutimage /><div className="flex relative z-10 flex-col justify-center items-center px-20 py-20 -mt-1.5 w-full text-base text-black whitespace-nowrap min-h-[328px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/994d2cee0a74a300e7e875a7aa49c05fe08e475e64b98c8cab43e2bf378568d3?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
         alt="Background Image"
-        className="object-cover absolute inset-0 size-full"
-      />
+        className="object-cover absolute inset-0 size-full" />
       <div className="flex relative flex-col mb-0 max-w-full w-[115px] max-md:mb-2.5">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ad7e9b8d0c3b729601df28f20044341e4696757b3f73851774de93c17033938?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
           alt="Logo"
-          className="object-contain w-full aspect-[0.8] max-md:mr-0.5"
-        />
+          className="object-contain w-full aspect-[0.8] max-md:mr-0.5" />
         <div className="flex gap-1.5">
           <NavigationLink label="Home" isActive={true} />
           {/* Removed Cart Icon */}
           <NavigationLink label="Blog" />
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
@@ -128,7 +127,7 @@ const ProductSummary: React.FC = () => {
 // CheckoutForm Component
 const CheckoutForm: React.FC = () => {
   return (
-    <form className="flex flex-col items-start px-20 pt-16 pb-32 w-full bg-white max-md:px-5 max-md:pb-24 max-md:max-w-full">
+    <><Checkoutimage /><form className="flex flex-col items-start px-20 pt-16 pb-32 w-full bg-white max-md:px-5 max-md:pb-24 max-md:max-w-full">
       <div className="self-end w-full max-w-[1168px] max-md:max-w-full">
         <div className="flex gap-6 max-md:flex-col">
           <div className="flex flex-col w-[43%] max-md:w-full">
@@ -150,15 +149,13 @@ const CheckoutForm: React.FC = () => {
               <SelectField
                 label="Country / Region"
                 value="Sri Lanka"
-                id="country"
-              />
+                id="country" />
               <InputField label="Street address" id="streetAddress" />
               <InputField label="Town / City" id="city" />
               <SelectField
                 label="Province"
                 value="Western Province"
-                id="province"
-              />
+                id="province" />
               <InputField label="ZIP code" id="zipCode" />
               <InputField label="Phone" id="phone" type="tel" />
               <InputField label="Email address" id="email" type="email" />
@@ -185,7 +182,7 @@ const CheckoutForm: React.FC = () => {
           </div>
         </div>
       </div>
-    </form>
+    </form></>
   );
 };
 

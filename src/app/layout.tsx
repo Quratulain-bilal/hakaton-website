@@ -1,16 +1,18 @@
-import type { Metadata } from "next";
+
+import { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import Navbar from "./Components/Navbar"
+import "./globals.css"; // Correct path for global CSS
+import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "/fonts/GeistVF.woff", // Correct path for fonts in the public folder
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "/fonts/GeistMonoVF.woff", // Correct path for fonts in the public folder
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -22,15 +24,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
-        <Navbar/>
-        {children}
-        <Footer/>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Navbar />
+        <main>{children}</main> {/* Ensure children is wrapped in main */}
+        <Footer />
       </body>
     </html>
   );

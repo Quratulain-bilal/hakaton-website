@@ -38,7 +38,7 @@ const Navigation = () => {
   );
 
   return (
-    <div id="cart" className="flex relative z-10 flex-col justify-center items-center px-20 py-20 -mt-1.5 w-full text-base text-black whitespace-nowrap min-h-[328px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
+    <div id="Cart" className="flex relative z-10 flex-col justify-center items-center px-20 py-20 -mt-1.5 w-full text-base text-black whitespace-nowrap min-h-[328px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/994d2cee0a74a300e7e875a7aa49c05fe08e475e64b98c8cab43e2bf378568d3?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
@@ -121,7 +121,7 @@ const CartPage = () => {
   );
 
   return (
-    <div id="cart11" className="flex overflow-hidden flex-col bg-white">
+    <div id="cart333" className="flex overflow-hidden flex-col bg-white">
       <Navigation />
       <div className="px-20 py-9 w-full bg-white max-md:px-5 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
