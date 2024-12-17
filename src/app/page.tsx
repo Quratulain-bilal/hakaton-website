@@ -15,7 +15,7 @@ import Blogdata from "./Components/Blogpage/Blogdata"
 import Checkout from "./Components/checkout/Checkout";
 
 import Shoppage from "./Components/shop/Shoppage" ;
-import Cart from "./Components/Cart"
+
 
 
 
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div>
 
-      <Cart />
+     
 
       
 
@@ -41,7 +41,7 @@ export default function Home() {
       <Product />
       <Blog />
       <Instra />
-<<<<<<< HEAD
+
       
       
 
