@@ -2,8 +2,8 @@
 import { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css"; // Correct path for global CSS
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const geistSans = localFont({
   src: "/fonts/GeistVF.woff", // Correct path for fonts in the public folder
