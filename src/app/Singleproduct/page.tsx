@@ -54,9 +54,16 @@ const ProductDetails: React.FC = () => {
   ];
 
   const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState<string>(
+    "https://cdn.builder.io/api/v1/image/assets/TEMP/219fef56aee837c5804022740f4acce9430e35e81f9e83bbbb7ec919233c0777"
+  );
 
   const increment = () => setQuantity((prev) => prev + 1);
   const decrement = () => setQuantity((prev) => Math.max(1, prev - 1));
+
+  const handleImageSelect = (image: string) => {
+    setSelectedImage(image);
+  };
 
   return (
     <>
@@ -67,10 +74,26 @@ const ProductDetails: React.FC = () => {
           {/* Left Section: Image */}
           <div className="flex-1">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/219fef56aee837c5804022740f4acce9430e35e81f9e83bbbb7ec919233c0777"
+              src={selectedImage}
               alt="Asgaard Sofa"
               className="w-full rounded-lg object-cover"
             />
+            {/* Small Thumbnail Images */}
+            <div className="flex gap-4 mt-4">
+              {[
+                "https://cdn.builder.io/api/v1/image/assets/TEMP/219fef56aee837c5804022740f4acce9430e35e81f9e83bbbb7ec919233c0777",
+                "https://cdn.builder.io/api/v1/image/assets/TEMP/5a077f92fd46575a030faeed1a15e49321589598aaa57f7b9d014c3e0e8de828",
+                "https://cdn.builder.io/api/v1/image/assets/TEMP/43f827a16b96cc493c71f16a8bed4d9b4e559c569296a38f33bb59d52de4f4f0",
+              ].map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-16 h-16 object-cover cursor-pointer border-2 border-gray-300 hover:border-amber-500"
+                  onClick={() => handleImageSelect(image)}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Section: Details */}
@@ -123,17 +146,21 @@ const ProductDetails: React.FC = () => {
                 +
               </button>
             </div>
-<Link href="/Cart">
-            <button
-              className="px-12 py-4 bg-amber-50 text-black rounded-lg"
-              onClick={() => console.log("Add to cart")}
-            >
-              Add to Cart
-            </button>
+
+            {/* Add to Cart Button */}
+            <Link href="/Cart">
+              <button
+                className="px-12 py-4 bg-amber-50 text-black rounded-lg"
+                onClick={() => console.log("Add to cart")}
+              >
+                Add to Cart
+              </button>
             </Link>
           </div>
         </div>
+
         <Productinfo />
+
         {/* Related Products Section */}
         <section>
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">

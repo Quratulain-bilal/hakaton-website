@@ -19,7 +19,7 @@ const ImageComponent: React.FC = () => {
       <div className="  absolute mt-24 left-1/2 transform -translate-x-1/2 text-black text-lg ">
         <span>Home</span>
         <span>&gt;</span>
-        <span className="font-semibold ">Blog</span>
+        <span className="font-semibold ">Account</span>
       </div>
     </div>
   );

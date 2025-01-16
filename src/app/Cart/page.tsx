@@ -98,13 +98,7 @@ const CartPage = () => {
 
       <div className="px-20 py-9 w-full bg-white max-md:px-5 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-          <div className="flex flex-col w-[64%] max-md:ml-0 max-md:w-full">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5f562c388e1fb067e9f85c97eedaa4647b4ab1969e48747407f0a9db8aad717?placeholderIfAbsent=true&apiKey=b77517f4450544a992d89244a6a7443d"
-              alt="Company Logo"
-              className="object-contain grow shrink-0 max-w-full aspect-[8.85] w-[247px] max-md:mt-10" />
-          </div>
+        
         </div>
       </div>
       <div className="z-10 px-20 py-16 -mt-1.5 w-full bg-white max-md:px-5 max-md:max-w-full">

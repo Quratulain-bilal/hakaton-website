@@ -1,7 +1,7 @@
-"use client"; // Ensures the component runs on the client side
+"use client"; 
 
-import { useRouter } from "next/navigation"; // Import useRouter from Next.js
-import { useEffect } from "react"; // Import useEffect
+import { useRouter } from "next/navigation"; 
+import { useEffect } from "react"; 
 
 interface ButtonProps {
   text: string;
